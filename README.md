@@ -1,4 +1,8 @@
 # sentryhooks  
+
+Sending Sentry WebHooks messages to the Telegram messenger.
+Own Telegram bot have to be created to receive messages.
+Telegram token & chat id have to be set up as environments (have to be moved to secrets later)
   
   
 ### Hot to run locally:  
