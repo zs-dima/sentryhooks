@@ -8,7 +8,8 @@ import 'package:shelf/shelf.dart' as shelf;
 Future<shelf.Response> router(shelf.Request request) {
   if (request.method != 'POST') return Future.value(HttpResponse.notFound);
   // todo move 'code' check to the middleware
-  if (request.url.queryParameters['code'] != Platform.environment['CODE']) return Future.value(HttpResponse.notFound);
+  final urlCode = request.url.queryParameters['code'] ?? '';
+  if (urlCode.isNotEmpty && urlCode != Platform.environment['CODE']) return Future.value(HttpResponse.notFound);
 
   try {
     final path = request.url.path.trim().toLowerCase();

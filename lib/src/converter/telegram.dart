@@ -11,10 +11,10 @@ Future<shelf.Response> telegram(shelf.Request webHookData) async {
   final data = jsonDecode(json);
 
   // event.metadata.value
-  final String? message = data['event']?['title']?.replaceAll('_Exception: Exception: ', 'Exception: ');
-  final String? project = data['triggered_rule'];
-  final String? culprit = data['event']?['culprit'];
-  final String? url = data['event']?['web_url'];
+  final String? message = data['data']?['event']?['title']?.replaceAll('_Exception: Exception: ', 'Exception: ');
+  final String? project = data['data']?['triggered_rule'];
+  final String? culprit = data['data']?['event']?['culprit'];
+  final String? url = data['data']?['event']?['web_url'];
 
   if (message == null || message.isEmpty) {
     // Sentry WebHook had not been found
