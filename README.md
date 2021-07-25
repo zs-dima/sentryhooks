@@ -1,12 +1,20 @@
 # sentryhooks  
 
 Sending Sentry WebHooks messages to the Telegram messenger.
+<br/><br/>
 
-Own Telegram bot have to be created to receive messages.
+#### Own [Telegram bot](https://core.telegram.org/bots#3-how-do-i-create-a-bot) have to be created to receive messages.
 
 Telegram token & chat id have to be set up as environments (have to be moved to secrets later)
-  
-  
+<br/>
+
+#### Setup Sentry Alerts:
+
+Settings>Developer Settings>DevWebhook>Webhook URL
+
+and select DevWebhook as Alerts for projects
+<br/><br/>
+
 ### Setup project:  
 
 **{{PROJECT ID}}** - your Google Cloud project Id
